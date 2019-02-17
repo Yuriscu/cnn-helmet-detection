@@ -71,12 +71,12 @@ testAug = ImageDataGenerator(rescale = 1./255,
 trainGen = trainAug.flow_from_directory('train',
                                          target_size = (img_width, img_height),
                                          batch_size = BS,
-                                         class_mode = 'binary')
+                                         class_mode = 'categorical')
 
 testGen = testAug.flow_from_directory('test',
                                     target_size = (img_width, img_height),
                                     batch_size = BS,
-                                    class_mode = 'binary')
+                                    class_mode = 'categorical')
 
 classes = trainGen.class_indices    
 print(classes)
